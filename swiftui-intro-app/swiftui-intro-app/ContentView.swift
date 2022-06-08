@@ -9,8 +9,31 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            VStack(spacing: 25) {
+                    Text("AEM Consumer")
+                        .fontWeight(.light)
+                        .multilineTextAlignment(.center)
+                        .font(.title)
+                        .padding()
+                    //Spacer()
+                NavigationLink(destination: AEMContentView()) {
+                    HStack {
+                        Image(systemName: "key")
+                            .font(.title)
+                        Text("Click me")
+                            .fontWeight(.semibold)
+                            .font(.title)
+                    }
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(40)
+                }
+                .foregroundColor(Color.black.opacity(0.7))
+                .padding()
+            }
+        }
     }
 }
 

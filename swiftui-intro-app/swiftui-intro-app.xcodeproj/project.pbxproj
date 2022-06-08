@@ -14,6 +14,7 @@
 		E62A0D93284F74D10075E36C /* swiftui_intro_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D92284F74D10075E36C /* swiftui_intro_appTests.swift */; };
 		E62A0D9D284F74D10075E36C /* swiftui_intro_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D9C284F74D10075E36C /* swiftui_intro_appUITests.swift */; };
 		E62A0D9F284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D9E284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift */; };
+		E62A0DAC2850C17B0075E36C /* AEMContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0DAB2850C17B0075E36C /* AEMContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		E62A0D98284F74D10075E36C /* swiftui-intro-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swiftui-intro-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E62A0D9C284F74D10075E36C /* swiftui_intro_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_intro_appUITests.swift; sourceTree = "<group>"; };
 		E62A0D9E284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_intro_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E62A0DAB2850C17B0075E36C /* AEMContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				E62A0D83284F74D00075E36C /* ContentView.swift */,
 				E62A0D85284F74D10075E36C /* Assets.xcassets */,
 				E62A0D87284F74D10075E36C /* Preview Content */,
+				E62A0DAB2850C17B0075E36C /* AEMContentView.swift */,
 			);
 			path = "swiftui-intro-app";
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E62A0DAC2850C17B0075E36C /* AEMContentView.swift in Sources */,
 				E62A0D84284F74D00075E36C /* ContentView.swift in Sources */,
 				E62A0D82284F74D00075E36C /* swiftui_intro_appApp.swift in Sources */,
 			);
