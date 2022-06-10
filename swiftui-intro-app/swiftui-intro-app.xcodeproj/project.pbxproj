@@ -15,6 +15,8 @@
 		E62A0D9D284F74D10075E36C /* swiftui_intro_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D9C284F74D10075E36C /* swiftui_intro_appUITests.swift */; };
 		E62A0D9F284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D9E284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift */; };
 		E62A0DAC2850C17B0075E36C /* AEMContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0DAB2850C17B0075E36C /* AEMContentView.swift */; };
+		E62A0DAE285359370075E36C /* AEMPageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0DAD285359370075E36C /* AEMPageInfo.swift */; };
+		E62A0DB0285359930075E36C /* AEMPageInfoStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0DAF285359930075E36C /* AEMPageInfoStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		E62A0D9C284F74D10075E36C /* swiftui_intro_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_intro_appUITests.swift; sourceTree = "<group>"; };
 		E62A0D9E284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_intro_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E62A0DAB2850C17B0075E36C /* AEMContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMContentView.swift; sourceTree = "<group>"; };
+		E62A0DAD285359370075E36C /* AEMPageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMPageInfo.swift; sourceTree = "<group>"; };
+		E62A0DAF285359930075E36C /* AEMPageInfoStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMPageInfoStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				E62A0D85284F74D10075E36C /* Assets.xcassets */,
 				E62A0D87284F74D10075E36C /* Preview Content */,
 				E62A0DAB2850C17B0075E36C /* AEMContentView.swift */,
+				E62A0DAD285359370075E36C /* AEMPageInfo.swift */,
+				E62A0DAF285359930075E36C /* AEMPageInfoStatus.swift */,
 			);
 			path = "swiftui-intro-app";
 			sourceTree = "<group>";
@@ -260,9 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E62A0DAE285359370075E36C /* AEMPageInfo.swift in Sources */,
 				E62A0DAC2850C17B0075E36C /* AEMContentView.swift in Sources */,
 				E62A0D84284F74D00075E36C /* ContentView.swift in Sources */,
 				E62A0D82284F74D00075E36C /* swiftui_intro_appApp.swift in Sources */,
+				E62A0DB0285359930075E36C /* AEMPageInfoStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
