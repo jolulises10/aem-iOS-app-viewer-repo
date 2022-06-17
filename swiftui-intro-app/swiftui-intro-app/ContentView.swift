@@ -46,7 +46,10 @@ struct ContentView: View {
                         }
                     }
                 }
-                NavigationLink(destination: AEMContentView(apiMessageText: "", aemPath: $path)) {
+                NavigationLink(destination: AEMContentView(apiTitle: "",
+                                                           apiText: "",
+                                                           apiMessage: "",
+                                                           aemPath: $path)) {
                     HStack {
                         Image(systemName: "icloud")
                             .font(.title)
