@@ -28,3 +28,13 @@ struct AEMPageResponse: Codable {
         self.message = "Initial values"
       }
 }
+
+struct AEMSecurityCheckRequest: Codable {
+    var user: String
+    var pwd: String
+    
+    init() {
+        self.user = "Initial values"
+        self.pwd = "Initial values"
+      }
+}
