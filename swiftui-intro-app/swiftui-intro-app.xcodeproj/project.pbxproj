@@ -15,6 +15,7 @@
 		E62A0D9D284F74D10075E36C /* swiftui_intro_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D9C284F74D10075E36C /* swiftui_intro_appUITests.swift */; };
 		E62A0D9F284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D9E284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift */; };
 		E62A0DAC2850C17B0075E36C /* AEMContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0DAB2850C17B0075E36C /* AEMContentView.swift */; };
+		E6A5E3A22863747C0001113A /* AEMLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5E3A12863747B0001113A /* AEMLoginView.swift */; };
 		E6B4BF7E2857573700D591A5 /* GeneralResponseJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B4BF7D2857573700D591A5 /* GeneralResponseJson.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		E62A0D9C284F74D10075E36C /* swiftui_intro_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_intro_appUITests.swift; sourceTree = "<group>"; };
 		E62A0D9E284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_intro_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E62A0DAB2850C17B0075E36C /* AEMContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMContentView.swift; sourceTree = "<group>"; };
+		E6A5E3A12863747B0001113A /* AEMLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMLoginView.swift; sourceTree = "<group>"; };
 		E6B4BF7D2857573700D591A5 /* GeneralResponseJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponseJson.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				E62A0D87284F74D10075E36C /* Preview Content */,
 				E62A0DAB2850C17B0075E36C /* AEMContentView.swift */,
 				E6B4BF7D2857573700D591A5 /* GeneralResponseJson.swift */,
+				E6A5E3A12863747B0001113A /* AEMLoginView.swift */,
 			);
 			path = "swiftui-intro-app";
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				E62A0DAC2850C17B0075E36C /* AEMContentView.swift in Sources */,
 				E62A0D84284F74D00075E36C /* ContentView.swift in Sources */,
 				E62A0D82284F74D00075E36C /* swiftui_intro_appApp.swift in Sources */,
+				E6A5E3A22863747C0001113A /* AEMLoginView.swift in Sources */,
 				E6B4BF7E2857573700D591A5 /* GeneralResponseJson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
