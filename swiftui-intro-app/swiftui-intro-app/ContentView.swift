@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var path : String
     @FocusState private var focusedField: Bool
+    @Binding private var aemIP : String
     
     var body: some View {
         NavigationView {
@@ -46,10 +47,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                NavigationLink(destination: AEMContentView(apiTitle: "",
-                                                           apiText: "",
-                                                           apiMessage: "",
-                                                           aemPath: $path)) {
+                NavigationLink(destination: AEMContentView(aemPathParam: $path, aemIpParam: $aemIP)) {
                     HStack {
                         Image(systemName: "icloud")
                             .font(.title)
@@ -72,15 +70,19 @@ struct ContentView: View {
         }
     }
     
-    init(){
-        path = ""
-        focusedField = true
+    init(aemIpParam: Binding<String>){
+        self.path = ""
+        self._aemIP = aemIpParam
+        self.focusedField = true
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    
+    static let aemIpPreview = "Preview Purposes Only"
+    
     static var previews: some View {
-        ContentView()
+        ContentView(aemIpParam: .constant(aemIpPreview))
             .previewInterfaceOrientation(.portrait)
     }
 }

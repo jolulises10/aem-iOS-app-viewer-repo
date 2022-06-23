@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct AEMContentView: View {
-    @State var apiTitle : String
-    @State var apiText : String
-    @State var apiMessage : String
-    @Binding var aemPath : String
+    @State private var apiTitle : String
+    @State private var apiText : String
+    @State private var apiMessage : String
+    @Binding private var aemPath : String
+    @Binding private var aemIP : String
     
     var body: some View {
         VStack(spacing: 10) {
@@ -35,33 +36,37 @@ struct AEMContentView: View {
             }.padding()
         }
         .task {
-            let myModel = await callAPI(aemPathToSearch: aemPath)
+            let myModel = await callAPI(aemPathToSearch: aemPath, aemIP: aemIP)
             apiTitle = "Title: "+myModel.title
             apiText = " Text: "+myModel.text
             apiMessage = " Message: "+myModel.message
         }
     }
-}
-
-struct AEMContentView_Previews: PreviewProvider {
-    static let apiTitle = "Title: title"
-    static let apiText = "Text: Text"
-    static let apiMessage = "Message: Message"
-    static let aemPathPreview = "Preview Purposes Only"
     
-    static var previews: some View {
-        AEMContentView(apiTitle: apiTitle,
-                       apiText: apiTitle,
-                       apiMessage: apiMessage,
-                       aemPath: .constant(aemPathPreview))
+    init(aemPathParam: Binding<String>, aemIpParam: Binding<String>){
+        self.apiTitle = ""
+        self.apiText = ""
+        self.apiMessage = ""
+        self._aemPath = aemPathParam
+        self._aemIP = aemIpParam
     }
 }
 
-func callAPI(aemPathToSearch: String) async -> AEMPageResponse {
+struct AEMContentView_Previews: PreviewProvider {
+    
+    static let aemPathPreview = "Preview Purposes Only"
+    static let aemIpPreview = "Preview Purposes Only"
+    
+    static var previews: some View {
+        AEMContentView(aemPathParam: .constant(aemPathPreview), aemIpParam: .constant(aemIpPreview))
+    }
+}
+
+func callAPI(aemPathToSearch: String, aemIP: String) async -> AEMPageResponse {
     
     var objResponse = AEMPageResponse()
 
-    var components = URLComponents(string: "http://192.168.1.110:4504/bin/helloWorldComponentServlet")
+    var components = URLComponents(string: "http://"+aemIP+":4504/bin/helloWorldComponentServlet")
     let queryItemPath = URLQueryItem(name: "aemPath", value: aemPathToSearch)
 
     components?.queryItems = [queryItemPath]
@@ -70,7 +75,7 @@ func callAPI(aemPathToSearch: String) async -> AEMPageResponse {
     securityCheckTmp.user = "admin"
     securityCheckTmp.pwd = "admin"
     
-    var tmpCookieResponse = await callAuthPostAPI(securityRequest: securityCheckTmp)
+    //var tmpCookieResponse = await callAuthPostAPI(securityRequest: securityCheckTmp)
     
     do{
         let (data, _) = try await URLSession.shared.data(from: (components?.url)!)
