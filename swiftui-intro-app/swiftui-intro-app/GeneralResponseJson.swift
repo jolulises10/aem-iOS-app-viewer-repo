@@ -38,3 +38,9 @@ struct AEMSecurityCheckRequest: Codable {
         self.pwd = "Initial values"
       }
 }
+
+class AemInputData : ObservableObject {
+    @Published var aemIp: String = ""
+    @Published var aemPort: String = ""
+    @Published var isLoggedin: Bool = false
+}

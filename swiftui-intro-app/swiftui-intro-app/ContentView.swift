@@ -10,10 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @State private var path : String
     @FocusState private var focusedField: Bool
-    @Binding private var aemIP : String
     
     var body: some View {
-        NavigationView {
+        //NavigationView {
             VStack(spacing: 10) {
                 HStack(alignment: .bottom) {
                     Text("AEM Path Validation")
@@ -47,7 +46,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                NavigationLink(destination: AEMContentView(aemPathParam: $path, aemIpParam: $aemIP)) {
+                NavigationLink(destination: AEMContentView(aemPathParam: $path)) {
                     HStack {
                         Image(systemName: "icloud")
                             .font(.title)
@@ -67,22 +66,23 @@ struct ContentView: View {
                     .frame(minHeight: 10, idealHeight: 200, maxHeight: 600)
                     .fixedSize()*/
             }
-        }
+        //}
+        .navigationBarBackButtonHidden(true)
     }
     
-    init(aemIpParam: Binding<String>){
+    init(/* aemData: Binding<AemInputData> */){
         self.path = ""
-        self._aemIP = aemIpParam
+        //self._aemData = aemData
         self.focusedField = true
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     
-    static let aemIpPreview = "Preview Purposes Only"
+    //static let aemIpPreview = "Preview Purposes Only"
     
     static var previews: some View {
-        ContentView(aemIpParam: .constant(aemIpPreview))
+        ContentView(/* aemIpParam: .constant(aemIpPreview) */)
             .previewInterfaceOrientation(.portrait)
     }
 }

@@ -9,9 +9,23 @@ import SwiftUI
 
 @main
 struct swiftui_intro_appApp: App {
+    
+    //@EnvironmentObject var userAuth: AemInputData
+    
     var body: some Scene {
         WindowGroup {
-            AEMLoginView()
+            
+            
+            //if !userAuth.isLoggedin {
+                AEMLoginView()
+            //}
+             /*else {
+                ContentView()
+            }*/
         }
     }
+    
+    /*init() {
+        self.userAuth = AemInputData()
+    }*/
 }
