@@ -10,15 +10,22 @@ import SwiftUI
 struct ContentView: View {
     @State private var path : String
     @FocusState private var focusedField: Bool
+    @EnvironmentObject var aemParams: AemInputData
     
     var body: some View {
         //NavigationView {
             VStack(spacing: 10) {
-                HStack(alignment: .bottom) {
+                HStack {
                     Text("AEM Path Validation")
                         .fontWeight(.medium)
                         .font(.title)
                     Spacer()
+                    NavigationLink(destination: AEMLoginView()) {
+                        EmptyView()
+                    }
+                    Button (action: performLogout) {
+                       Image(systemName:  "rectangle.portrait.and.arrow.right")
+                   }
                 }.padding()
                 /*Spacer()
                     .frame(minHeight: 10, idealHeight: 200, maxHeight: 600)
@@ -29,9 +36,6 @@ struct ContentView: View {
                         "AEM JCR resource path",
                         text: $path
                     )
-                    .onSubmit {
-                        print("Validating resource path")
-                    }
                     .focused($focusedField)
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
@@ -68,6 +72,38 @@ struct ContentView: View {
             }
         //}
         .navigationBarBackButtonHidden(true)
+    }
+    
+    func performLogout() {
+        Task {
+            let logoutResponse = await callLogoutGetAPI()
+            if logoutResponse == true {
+                aemParams.isLoggedin = !logoutResponse
+            }
+        }
+        
+        print("updating isLoggedin to true: \($aemParams.isLoggedin)")
+    }
+    
+    private func callLogoutGetAPI() async -> Bool {
+        var logoutOperation : Bool = false
+        
+        guard let url =  URL(string: "http://"+$aemParams.aemIp.wrappedValue+":"+$aemParams.aemPort.wrappedValue+"/system/sling/logout.html")
+        else{
+            return logoutOperation
+        }
+        
+        do{
+            let ( _, response) = try await URLSession.shared.data(from: url)
+            if let httpResponse = response as? HTTPURLResponse {
+                if (401...403).contains(httpResponse.statusCode){
+                    logoutOperation = true
+                }
+            }
+        }catch let parsingError {
+            print("Error", parsingError)
+        }
+        return logoutOperation
     }
     
     init(/* aemData: Binding<AemInputData> */){

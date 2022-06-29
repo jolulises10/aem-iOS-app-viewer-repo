@@ -78,6 +78,7 @@ struct AEMLoginView: View {
             }
         }
         .environmentObject(aemParams)
+        .navigationViewStyle(.stack)
     }
     
     private func performLogin() {
@@ -121,18 +122,13 @@ struct AEMLoginView: View {
             print("reading data response: ")
             print(data)
             print("reading response: ")
-            if let httpResponse = response as? HTTPURLResponse, let fields = httpResponse.allHeaderFields as? [String : String] {
-                print(httpResponse.statusCode)
-                print("MIME ***********")
-                print(httpResponse.mimeType)
-                print("******* END MIME ***********")
+            if let httpResponse = response as? HTTPURLResponse {
                 //if statusCode is 200 ok, 401 not authorised and data is empty
                 if (200...299).contains(httpResponse.statusCode) && data.count > 0 {
                     loginSuccessful = true
                 }
-                for field in fields {
-                    print(field)
-                }
+                let cs = HTTPCookieStorage.shared//.cookies(for: url)
+                print(cs.cookies!)
             }
         }catch let parsingError {
             print("Error", parsingError)
