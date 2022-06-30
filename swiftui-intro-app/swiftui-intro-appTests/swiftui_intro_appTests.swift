@@ -9,9 +9,11 @@ import XCTest
 @testable import swiftui_intro_app
 
 class swiftui_intro_appTests: XCTestCase {
+    
+    var loginObject: AEMLoginView!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        loginObject = AEMLoginView()
     }
 
     override func tearDownWithError() throws {
@@ -31,6 +33,18 @@ class swiftui_intro_appTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testHelloWorldWithNoNameReturnsHelloWorld() throws {
+        //given
+        loginObject.val1 = 100
+        loginObject.val2 = 150
+        
+        //when
+        let result = loginObject.sumValues()
+        
+        //then
+        XCTAssertEqual(result,250)
     }
 
 }

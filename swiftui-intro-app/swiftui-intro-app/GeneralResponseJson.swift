@@ -7,6 +7,7 @@
 
 import Foundation
 
+//this struct was for testing purposes with an external mock api. Leaving there for the moment
 struct MockResponse: Codable {
     let message: String
     let errorMessage: String
@@ -26,16 +27,6 @@ struct AEMPageResponse: Codable {
         self.title = "Initial values"
         self.text = "Initial values"
         self.message = "Initial values"
-      }
-}
-
-struct AEMSecurityCheckRequest: Codable {
-    var user: String
-    var pwd: String
-    
-    init() {
-        self.user = "Initial values"
-        self.pwd = "Initial values"
       }
 }
 

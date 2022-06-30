@@ -14,6 +14,9 @@ struct AEMLoginView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     
+    var val1: Int
+    var val2: Int
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -82,15 +85,9 @@ struct AEMLoginView: View {
     }
     
     private func performLogin() {
-        /*var securityCheckTmp = AEMSecurityCheckRequest()
-        securityCheckTmp.user = $username.wrappedValue
-        securityCheckTmp.pwd = $password.wrappedValue*/
-        
         Task {
             aemParams.isLoggedin = await callAuthPostAPI()
         }
-        
-        print("updating isLoggedin to true: \($aemParams.isLoggedin)")
     }
     
     private func callAuthPostAPI() async -> Bool {
@@ -127,8 +124,6 @@ struct AEMLoginView: View {
                 if (200...299).contains(httpResponse.statusCode) && data.count > 0 {
                     loginSuccessful = true
                 }
-                let cs = HTTPCookieStorage.shared//.cookies(for: url)
-                print(cs.cookies!)
             }
         }catch let parsingError {
             print("Error", parsingError)
@@ -138,9 +133,15 @@ struct AEMLoginView: View {
         return loginSuccessful
     }
     
-    /* init(){
-        self.aemParams = AemInputData()
-    }*/
+     init(){
+        //self.aemParams = AemInputData()
+         self.val1 = 10
+         self.val2 = 15
+    }
+    
+    func sumValues() -> Int {
+        val1 + val2
+    }
 }
 
 struct AEMLoginView_Previews: PreviewProvider {
