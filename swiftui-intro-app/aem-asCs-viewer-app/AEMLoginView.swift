@@ -11,11 +11,7 @@ struct AEMLoginView: View {
     
     @FocusState private var focusedField: Bool
     @StateObject var aemParams = AemInputData()
-    @State private var username: String = ""
-    @State private var password: String = ""
-    
-    var val1: Int
-    var val2: Int
+    @StateObject var aemLogin = AemLogin()
     
     var body: some View {
         NavigationView {
@@ -27,10 +23,6 @@ struct AEMLoginView: View {
                 
                 ScrollView (showsIndicators: false) { // give the option to navigate over all elements in landscape mode
                     VStack {
-                        /*Spacer()
-                            .frame(minHeight: 10, idealHeight: 110)
-                            .fixedSize()*/
-                        
                         WelcomeTextLabel()
                         HStack{
                             TextField("IP AEM instance", text: $aemParams.aemIp)
@@ -47,22 +39,21 @@ struct AEMLoginView: View {
                         }
                         .padding(.bottom, 20)
                         
-                        TextField("Username", text: $username)
+                        TextField("Username", text: $aemLogin.aemUser)
                             .padding()
                             .focused($focusedField)
                             .background(Color(.systemGray6))
                             .cornerRadius(5.0)
                             .padding(.bottom, 20)
-                        SecureField("Password", text: $password)
+                        SecureField("Password", text: $aemLogin.aemPassword)
                             .padding()
                             .focused($focusedField)
                             .background(Color(.systemGray6))
                             .cornerRadius(5.0)
                             .padding(.bottom, 20)
-                        NavigationLink(destination: ContentView(), isActive: $aemParams.isLoggedin) {
+                        NavigationLink(destination: ContentView(), isActive: $aemLogin.isLoggedin) {
                             EmptyView()
                         }
-                        //LoginButtonLabel()
                         Button(action: performLogin) {
                             LoginButtonLabel()
                         }
@@ -81,66 +72,12 @@ struct AEMLoginView: View {
             }
         }
         .environmentObject(aemParams)
+        .environmentObject(aemLogin)
         .navigationViewStyle(.stack)
     }
     
     private func performLogin() {
-        Task {
-            aemParams.isLoggedin = await callAuthPostAPI()
-        }
-    }
-    
-    private func callAuthPostAPI() async -> Bool {
-        
-        var loginSuccessful: Bool
-        loginSuccessful = false
-        
-        let urlString: String = "http://"+$aemParams.aemIp.wrappedValue+":"+$aemParams.aemPort.wrappedValue+"/libs/granite/core/content/login.html/j_security_check"
-
-        guard let url =  URL(string: urlString)
-        else{
-            return loginSuccessful
-        }
-        
-        var requestBodyComponents = URLComponents()
-        requestBodyComponents.queryItems = [
-            URLQueryItem(name: "j_username", value: $username.wrappedValue),
-            URLQueryItem(name: "j_password", value: $password.wrappedValue),
-            URLQueryItem(name: "_charset_", value: "UTF-8")
-        ]
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField:"Content-Type")
-        request.httpBody = requestBodyComponents.query?.data(using: .utf8)
-        
-        do{
-            let (data, response) = try await URLSession.shared.data(for: request)
-            print("reading data response: ")
-            print(data)
-            print("reading response: ")
-            if let httpResponse = response as? HTTPURLResponse {
-                //if statusCode is 200 ok, 401 not authorised and data is empty
-                if (200...299).contains(httpResponse.statusCode) && data.count > 0 {
-                    loginSuccessful = true
-                }
-            }
-        }catch let parsingError {
-            print("Error", parsingError)
-        }
-        
-        
-        return loginSuccessful
-    }
-    
-     init(){
-        //self.aemParams = AemInputData()
-         self.val1 = 10
-         self.val2 = 15
-    }
-    
-    func sumValues() -> Int {
-        val1 + val2
+        aemLogin.callAuthPostAPI(aemParams: aemParams)
     }
 }
 

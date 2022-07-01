@@ -33,5 +33,4 @@ struct AEMPageResponse: Codable {
 class AemInputData : ObservableObject {
     @Published var aemIp: String = ""
     @Published var aemPort: String = ""
-    @Published var isLoggedin: Bool = false
 }

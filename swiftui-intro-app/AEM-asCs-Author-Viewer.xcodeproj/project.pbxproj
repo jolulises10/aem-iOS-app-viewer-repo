@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E62A0D82284F74D00075E36C /* swiftui_intro_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D81284F74D00075E36C /* swiftui_intro_appApp.swift */; };
-		E62A0D84284F74D00075E36C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D83284F74D00075E36C /* ContentView.swift */; };
+		E62A0D82284F74D00075E36C /* AEMasCsAuthorViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D81284F74D00075E36C /* AEMasCsAuthorViewer.swift */; };
+		E62A0D84284F74D00075E36C /* AEMMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D83284F74D00075E36C /* AEMMenuView.swift */; };
 		E62A0D86284F74D10075E36C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E62A0D85284F74D10075E36C /* Assets.xcassets */; };
 		E62A0D89284F74D10075E36C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E62A0D88284F74D10075E36C /* Preview Assets.xcassets */; };
-		E62A0D93284F74D10075E36C /* swiftui_intro_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D92284F74D10075E36C /* swiftui_intro_appTests.swift */; };
+		E62A0D93284F74D10075E36C /* AEMasCsAuhtorViewerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D92284F74D10075E36C /* AEMasCsAuhtorViewerAppTests.swift */; };
 		E62A0D9D284F74D10075E36C /* swiftui_intro_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D9C284F74D10075E36C /* swiftui_intro_appUITests.swift */; };
 		E62A0D9F284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D9E284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift */; };
-		E62A0DAC2850C17B0075E36C /* AEMContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0DAB2850C17B0075E36C /* AEMContentView.swift */; };
+		E62A0DAC2850C17B0075E36C /* AEMContentGetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0DAB2850C17B0075E36C /* AEMContentGetView.swift */; };
+		E66706CB286F2D0900C200EA /* AEMModelViewClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66706CA286F2D0900C200EA /* AEMModelViewClasses.swift */; };
 		E6A5E3A22863747C0001113A /* AEMLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5E3A12863747B0001113A /* AEMLoginView.swift */; };
-		E6B4BF7E2857573700D591A5 /* GeneralResponseJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B4BF7D2857573700D591A5 /* GeneralResponseJson.swift */; };
+		E6B4BF7E2857573700D591A5 /* AEMModelViewStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B4BF7D2857573700D591A5 /* AEMModelViewStructs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,19 +38,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E62A0D7E284F74D00075E36C /* swiftui-intro-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiftui-intro-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E62A0D81284F74D00075E36C /* swiftui_intro_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_intro_appApp.swift; sourceTree = "<group>"; };
-		E62A0D83284F74D00075E36C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E62A0D7E284F74D00075E36C /* AEM-asCs-Author-Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AEM-asCs-Author-Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E62A0D81284F74D00075E36C /* AEMasCsAuthorViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMasCsAuthorViewer.swift; sourceTree = "<group>"; };
+		E62A0D83284F74D00075E36C /* AEMMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMMenuView.swift; sourceTree = "<group>"; };
 		E62A0D85284F74D10075E36C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E62A0D88284F74D10075E36C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E62A0D8E284F74D10075E36C /* swiftui-intro-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swiftui-intro-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E62A0D92284F74D10075E36C /* swiftui_intro_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_intro_appTests.swift; sourceTree = "<group>"; };
-		E62A0D98284F74D10075E36C /* swiftui-intro-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swiftui-intro-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E62A0D8E284F74D10075E36C /* AEM-asCs-Author-ViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AEM-asCs-Author-ViewerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E62A0D92284F74D10075E36C /* AEMasCsAuhtorViewerAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMasCsAuhtorViewerAppTests.swift; sourceTree = "<group>"; };
+		E62A0D98284F74D10075E36C /* AEM-asCs-Author-ViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AEM-asCs-Author-ViewerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E62A0D9C284F74D10075E36C /* swiftui_intro_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_intro_appUITests.swift; sourceTree = "<group>"; };
 		E62A0D9E284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_intro_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E62A0DAB2850C17B0075E36C /* AEMContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMContentView.swift; sourceTree = "<group>"; };
+		E62A0DAB2850C17B0075E36C /* AEMContentGetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMContentGetView.swift; sourceTree = "<group>"; };
+		E66706CA286F2D0900C200EA /* AEMModelViewClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMModelViewClasses.swift; sourceTree = "<group>"; };
 		E6A5E3A12863747B0001113A /* AEMLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMLoginView.swift; sourceTree = "<group>"; };
-		E6B4BF7D2857573700D591A5 /* GeneralResponseJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponseJson.swift; sourceTree = "<group>"; };
+		E6B4BF7D2857573700D591A5 /* AEMModelViewStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMModelViewStructs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +82,9 @@
 		E62A0D75284F74D00075E36C = {
 			isa = PBXGroup;
 			children = (
-				E62A0D80284F74D00075E36C /* swiftui-intro-app */,
-				E62A0D91284F74D10075E36C /* swiftui-intro-appTests */,
-				E62A0D9B284F74D10075E36C /* swiftui-intro-appUITests */,
+				E62A0D80284F74D00075E36C /* aem-asCs-viewer-app */,
+				E62A0D91284F74D10075E36C /* aem-asCs-viewer-appTests */,
+				E62A0D9B284F74D10075E36C /* aem-asCs-viewer-appUITests */,
 				E62A0D7F284F74D00075E36C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,25 +92,26 @@
 		E62A0D7F284F74D00075E36C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E62A0D7E284F74D00075E36C /* swiftui-intro-app.app */,
-				E62A0D8E284F74D10075E36C /* swiftui-intro-appTests.xctest */,
-				E62A0D98284F74D10075E36C /* swiftui-intro-appUITests.xctest */,
+				E62A0D7E284F74D00075E36C /* AEM-asCs-Author-Viewer.app */,
+				E62A0D8E284F74D10075E36C /* AEM-asCs-Author-ViewerTests.xctest */,
+				E62A0D98284F74D10075E36C /* AEM-asCs-Author-ViewerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E62A0D80284F74D00075E36C /* swiftui-intro-app */ = {
+		E62A0D80284F74D00075E36C /* aem-asCs-viewer-app */ = {
 			isa = PBXGroup;
 			children = (
-				E62A0D81284F74D00075E36C /* swiftui_intro_appApp.swift */,
-				E62A0D83284F74D00075E36C /* ContentView.swift */,
+				E62A0D81284F74D00075E36C /* AEMasCsAuthorViewer.swift */,
+				E62A0D83284F74D00075E36C /* AEMMenuView.swift */,
 				E62A0D85284F74D10075E36C /* Assets.xcassets */,
 				E62A0D87284F74D10075E36C /* Preview Content */,
-				E62A0DAB2850C17B0075E36C /* AEMContentView.swift */,
-				E6B4BF7D2857573700D591A5 /* GeneralResponseJson.swift */,
+				E62A0DAB2850C17B0075E36C /* AEMContentGetView.swift */,
+				E6B4BF7D2857573700D591A5 /* AEMModelViewStructs.swift */,
 				E6A5E3A12863747B0001113A /* AEMLoginView.swift */,
+				E66706CA286F2D0900C200EA /* AEMModelViewClasses.swift */,
 			);
-			path = "swiftui-intro-app";
+			path = "aem-asCs-viewer-app";
 			sourceTree = "<group>";
 		};
 		E62A0D87284F74D10075E36C /* Preview Content */ = {
@@ -119,29 +122,29 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E62A0D91284F74D10075E36C /* swiftui-intro-appTests */ = {
+		E62A0D91284F74D10075E36C /* aem-asCs-viewer-appTests */ = {
 			isa = PBXGroup;
 			children = (
-				E62A0D92284F74D10075E36C /* swiftui_intro_appTests.swift */,
+				E62A0D92284F74D10075E36C /* AEMasCsAuhtorViewerAppTests.swift */,
 			);
-			path = "swiftui-intro-appTests";
+			path = "aem-asCs-viewer-appTests";
 			sourceTree = "<group>";
 		};
-		E62A0D9B284F74D10075E36C /* swiftui-intro-appUITests */ = {
+		E62A0D9B284F74D10075E36C /* aem-asCs-viewer-appUITests */ = {
 			isa = PBXGroup;
 			children = (
 				E62A0D9C284F74D10075E36C /* swiftui_intro_appUITests.swift */,
 				E62A0D9E284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift */,
 			);
-			path = "swiftui-intro-appUITests";
+			path = "aem-asCs-viewer-appUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E62A0D7D284F74D00075E36C /* swiftui-intro-app */ = {
+		E62A0D7D284F74D00075E36C /* AEM-asCs-Author-Viewer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E62A0DA2284F74D10075E36C /* Build configuration list for PBXNativeTarget "swiftui-intro-app" */;
+			buildConfigurationList = E62A0DA2284F74D10075E36C /* Build configuration list for PBXNativeTarget "AEM-asCs-Author-Viewer" */;
 			buildPhases = (
 				E62A0D7A284F74D00075E36C /* Sources */,
 				E62A0D7B284F74D00075E36C /* Frameworks */,
@@ -151,14 +154,14 @@
 			);
 			dependencies = (
 			);
-			name = "swiftui-intro-app";
+			name = "AEM-asCs-Author-Viewer";
 			productName = "swiftui-intro-app";
-			productReference = E62A0D7E284F74D00075E36C /* swiftui-intro-app.app */;
+			productReference = E62A0D7E284F74D00075E36C /* AEM-asCs-Author-Viewer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E62A0D8D284F74D10075E36C /* swiftui-intro-appTests */ = {
+		E62A0D8D284F74D10075E36C /* AEM-asCs-Author-ViewerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E62A0DA5284F74D10075E36C /* Build configuration list for PBXNativeTarget "swiftui-intro-appTests" */;
+			buildConfigurationList = E62A0DA5284F74D10075E36C /* Build configuration list for PBXNativeTarget "AEM-asCs-Author-ViewerTests" */;
 			buildPhases = (
 				E62A0D8A284F74D10075E36C /* Sources */,
 				E62A0D8B284F74D10075E36C /* Frameworks */,
@@ -169,14 +172,14 @@
 			dependencies = (
 				E62A0D90284F74D10075E36C /* PBXTargetDependency */,
 			);
-			name = "swiftui-intro-appTests";
+			name = "AEM-asCs-Author-ViewerTests";
 			productName = "swiftui-intro-appTests";
-			productReference = E62A0D8E284F74D10075E36C /* swiftui-intro-appTests.xctest */;
+			productReference = E62A0D8E284F74D10075E36C /* AEM-asCs-Author-ViewerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E62A0D97284F74D10075E36C /* swiftui-intro-appUITests */ = {
+		E62A0D97284F74D10075E36C /* AEM-asCs-Author-ViewerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E62A0DA8284F74D10075E36C /* Build configuration list for PBXNativeTarget "swiftui-intro-appUITests" */;
+			buildConfigurationList = E62A0DA8284F74D10075E36C /* Build configuration list for PBXNativeTarget "AEM-asCs-Author-ViewerUITests" */;
 			buildPhases = (
 				E62A0D94284F74D10075E36C /* Sources */,
 				E62A0D95284F74D10075E36C /* Frameworks */,
@@ -187,9 +190,9 @@
 			dependencies = (
 				E62A0D9A284F74D10075E36C /* PBXTargetDependency */,
 			);
-			name = "swiftui-intro-appUITests";
+			name = "AEM-asCs-Author-ViewerUITests";
 			productName = "swiftui-intro-appUITests";
-			productReference = E62A0D98284F74D10075E36C /* swiftui-intro-appUITests.xctest */;
+			productReference = E62A0D98284F74D10075E36C /* AEM-asCs-Author-ViewerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -215,7 +218,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E62A0D79284F74D00075E36C /* Build configuration list for PBXProject "swiftui-intro-app" */;
+			buildConfigurationList = E62A0D79284F74D00075E36C /* Build configuration list for PBXProject "AEM-asCs-Author-Viewer" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -228,9 +231,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E62A0D7D284F74D00075E36C /* swiftui-intro-app */,
-				E62A0D8D284F74D10075E36C /* swiftui-intro-appTests */,
-				E62A0D97284F74D10075E36C /* swiftui-intro-appUITests */,
+				E62A0D7D284F74D00075E36C /* AEM-asCs-Author-Viewer */,
+				E62A0D8D284F74D10075E36C /* AEM-asCs-Author-ViewerTests */,
+				E62A0D97284F74D10075E36C /* AEM-asCs-Author-ViewerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -266,11 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E62A0DAC2850C17B0075E36C /* AEMContentView.swift in Sources */,
-				E62A0D84284F74D00075E36C /* ContentView.swift in Sources */,
-				E62A0D82284F74D00075E36C /* swiftui_intro_appApp.swift in Sources */,
+				E62A0DAC2850C17B0075E36C /* AEMContentGetView.swift in Sources */,
+				E62A0D84284F74D00075E36C /* AEMMenuView.swift in Sources */,
+				E62A0D82284F74D00075E36C /* AEMasCsAuthorViewer.swift in Sources */,
 				E6A5E3A22863747C0001113A /* AEMLoginView.swift in Sources */,
-				E6B4BF7E2857573700D591A5 /* GeneralResponseJson.swift in Sources */,
+				E6B4BF7E2857573700D591A5 /* AEMModelViewStructs.swift in Sources */,
+				E66706CB286F2D0900C200EA /* AEMModelViewClasses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E62A0D93284F74D10075E36C /* swiftui_intro_appTests.swift in Sources */,
+				E62A0D93284F74D10075E36C /* AEMasCsAuhtorViewerAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,12 +300,12 @@
 /* Begin PBXTargetDependency section */
 		E62A0D90284F74D10075E36C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E62A0D7D284F74D00075E36C /* swiftui-intro-app */;
+			target = E62A0D7D284F74D00075E36C /* AEM-asCs-Author-Viewer */;
 			targetProxy = E62A0D8F284F74D10075E36C /* PBXContainerItemProxy */;
 		};
 		E62A0D9A284F74D10075E36C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E62A0D7D284F74D00075E36C /* swiftui-intro-app */;
+			target = E62A0D7D284F74D00075E36C /* AEM-asCs-Author-Viewer */;
 			targetProxy = E62A0D99284F74D10075E36C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -492,7 +496,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swiftui-intro-app.app/swiftui-intro-app";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AEM-asCs-Author-Viewer.app/AEM-asCs-Author-Viewer";
 			};
 			name = Debug;
 		};
@@ -511,7 +515,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swiftui-intro-app.app/swiftui-intro-app";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AEM-asCs-Author-Viewer.app/AEM-asCs-Author-Viewer";
 			};
 			name = Release;
 		};
@@ -552,7 +556,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E62A0D79284F74D00075E36C /* Build configuration list for PBXProject "swiftui-intro-app" */ = {
+		E62A0D79284F74D00075E36C /* Build configuration list for PBXProject "AEM-asCs-Author-Viewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E62A0DA0284F74D10075E36C /* Debug */,
@@ -561,7 +565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E62A0DA2284F74D10075E36C /* Build configuration list for PBXNativeTarget "swiftui-intro-app" */ = {
+		E62A0DA2284F74D10075E36C /* Build configuration list for PBXNativeTarget "AEM-asCs-Author-Viewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E62A0DA3284F74D10075E36C /* Debug */,
@@ -570,7 +574,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E62A0DA5284F74D10075E36C /* Build configuration list for PBXNativeTarget "swiftui-intro-appTests" */ = {
+		E62A0DA5284F74D10075E36C /* Build configuration list for PBXNativeTarget "AEM-asCs-Author-ViewerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E62A0DA6284F74D10075E36C /* Debug */,
@@ -579,7 +583,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E62A0DA8284F74D10075E36C /* Build configuration list for PBXNativeTarget "swiftui-intro-appUITests" */ = {
+		E62A0DA8284F74D10075E36C /* Build configuration list for PBXNativeTarget "AEM-asCs-Author-ViewerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E62A0DA9284F74D10075E36C /* Debug */,
