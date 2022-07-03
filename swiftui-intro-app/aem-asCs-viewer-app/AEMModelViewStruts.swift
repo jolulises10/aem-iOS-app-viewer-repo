@@ -29,8 +29,3 @@ struct AEMPageResponse: Codable {
         self.message = "Initial values"
       }
 }
-
-class AemInputData : ObservableObject {
-    @Published var aemIp: String = ""
-    @Published var aemPort: String = ""
-}

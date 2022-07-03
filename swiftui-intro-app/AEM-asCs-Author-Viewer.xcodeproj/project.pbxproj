@@ -16,8 +16,9 @@
 		E62A0D9F284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0D9E284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift */; };
 		E62A0DAC2850C17B0075E36C /* AEMContentGetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A0DAB2850C17B0075E36C /* AEMContentGetView.swift */; };
 		E66706CB286F2D0900C200EA /* AEMModelViewClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66706CA286F2D0900C200EA /* AEMModelViewClasses.swift */; };
+		E69F3DE4286F8312003CC816 /* MockUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69F3DE3286F8312003CC816 /* MockUrlProtocol.swift */; };
 		E6A5E3A22863747C0001113A /* AEMLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5E3A12863747B0001113A /* AEMLoginView.swift */; };
-		E6B4BF7E2857573700D591A5 /* AEMModelViewStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B4BF7D2857573700D591A5 /* AEMModelViewStructs.swift */; };
+		E6B4BF7E2857573700D591A5 /* AEMModelViewStruts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B4BF7D2857573700D591A5 /* AEMModelViewStruts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +51,9 @@
 		E62A0D9E284F74D10075E36C /* swiftui_intro_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_intro_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E62A0DAB2850C17B0075E36C /* AEMContentGetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMContentGetView.swift; sourceTree = "<group>"; };
 		E66706CA286F2D0900C200EA /* AEMModelViewClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMModelViewClasses.swift; sourceTree = "<group>"; };
+		E69F3DE3286F8312003CC816 /* MockUrlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlProtocol.swift; sourceTree = "<group>"; };
 		E6A5E3A12863747B0001113A /* AEMLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMLoginView.swift; sourceTree = "<group>"; };
-		E6B4BF7D2857573700D591A5 /* AEMModelViewStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMModelViewStructs.swift; sourceTree = "<group>"; };
+		E6B4BF7D2857573700D591A5 /* AEMModelViewStruts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEMModelViewStruts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +109,7 @@
 				E62A0D85284F74D10075E36C /* Assets.xcassets */,
 				E62A0D87284F74D10075E36C /* Preview Content */,
 				E62A0DAB2850C17B0075E36C /* AEMContentGetView.swift */,
-				E6B4BF7D2857573700D591A5 /* AEMModelViewStructs.swift */,
+				E6B4BF7D2857573700D591A5 /* AEMModelViewStruts.swift */,
 				E6A5E3A12863747B0001113A /* AEMLoginView.swift */,
 				E66706CA286F2D0900C200EA /* AEMModelViewClasses.swift */,
 			);
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				E62A0D92284F74D10075E36C /* AEMasCsAuhtorViewerAppTests.swift */,
+				E69F3DE3286F8312003CC816 /* MockUrlProtocol.swift */,
 			);
 			path = "aem-asCs-viewer-appTests";
 			sourceTree = "<group>";
@@ -273,7 +276,7 @@
 				E62A0D84284F74D00075E36C /* AEMMenuView.swift in Sources */,
 				E62A0D82284F74D00075E36C /* AEMasCsAuthorViewer.swift in Sources */,
 				E6A5E3A22863747C0001113A /* AEMLoginView.swift in Sources */,
-				E6B4BF7E2857573700D591A5 /* AEMModelViewStructs.swift in Sources */,
+				E6B4BF7E2857573700D591A5 /* AEMModelViewStruts.swift in Sources */,
 				E66706CB286F2D0900C200EA /* AEMModelViewClasses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E62A0D93284F74D10075E36C /* AEMasCsAuhtorViewerAppTests.swift in Sources */,
+				E69F3DE4286F8312003CC816 /* MockUrlProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +436,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"swiftui-intro-app/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -445,7 +449,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Self.swiftui-intro-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "Self.aem-asCs-viewer-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -460,7 +464,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"swiftui-intro-app/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -473,7 +477,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Self.swiftui-intro-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "Self.aem-asCs-viewer-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

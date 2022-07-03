@@ -12,11 +12,15 @@ class AemLogin : ObservableObject {
     @Published var aemPassword: String = ""
     @Published var isLoggedin: Bool = false
     
-    func callAuthPostAPI(aemParams: AemInputData) {
+    //private let urlSession: URLSession
+    
+    /*init(urlSession: URLSession = URLSession.shared){
+        self.urlSession = urlSession
+    }*/
+    
+    func callAuthPostAPI(urlString: String) {
         
         Task {
-            let urlString: String = "http://"+aemParams.aemIp+":"+aemParams.aemPort+"/libs/granite/core/content/login.html/j_security_check"
-
             guard let url =  URL(string: urlString)
             else{
                 return
@@ -35,22 +39,63 @@ class AemLogin : ObservableObject {
             request.httpBody = requestBodyComponents.query?.data(using: .utf8)
             
             do{
+                //let (data, response) = try await urlSession.data(for: request)
                 let (data, response) = try await URLSession.shared.data(for: request)
-                print("reading data response: ")
-                print(data)
-                print("reading response: ")
                 if let httpResponse = response as? HTTPURLResponse {
                     //if statusCode is 200 ok, 401 not authorised and data is empty
                     if (200...299).contains(httpResponse.statusCode) && data.count > 0 {
-                        isLoggedin = true
+                        DispatchQueue.main.async {
+                            self.isLoggedin = true
+                        }
                     }
                 }
             }catch let parsingError {
                 if isLoggedin == true {
-                    isLoggedin = false
+                    DispatchQueue.main.async {
+                        self.isLoggedin = false
+                    }
                 }
                 print("Error in authentication request:", parsingError)
             }
         }
+    }
+    
+    func callLogoutGetAPI(urlString: String) {
+        
+        guard let url =  URL(string: urlString)
+        else{
+            return
+        }
+        
+        Task {
+            do{
+                let ( _, response) = try await URLSession.shared.data(from: url)
+                if let httpResponse = response as? HTTPURLResponse {
+                    if (401...403).contains(httpResponse.statusCode){
+                        DispatchQueue.main.async {
+                            self.isLoggedin = false
+                        }
+                    }
+                }
+            }catch let parsingError {
+                DispatchQueue.main.async {
+                    self.isLoggedin = true
+                }
+                print("Error in logout request:", parsingError)
+            }
+        }
+    }
+}
+
+class AemInputData : ObservableObject {
+    @Published var aemIp: String = ""
+    @Published var aemPort: String = ""
+    
+    func returnLoginUrl() -> String {
+        return "http://"+aemIp+":"+aemPort+"/libs/granite/core/content/login.html/j_security_check"
+    }
+    
+    func returnLogoutUrl() -> String {
+        return "http://"+aemIp+":"+aemPort+"/system/sling/logout.html"
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var path : String
     @FocusState private var focusedField: Bool
+    @EnvironmentObject var aemLogin: AemLogin
     @EnvironmentObject var aemParams: AemInputData
     
     var body: some View {
@@ -75,35 +76,7 @@ struct ContentView: View {
     }
     
     func performLogout() {
-        Task {
-            let logoutResponse = await callLogoutGetAPI()
-            if logoutResponse == true {
-                aemParams.isLoggedin = !logoutResponse
-            }
-        }
-        
-        print("updating isLoggedin to true: \($aemParams.isLoggedin)")
-    }
-    
-    private func callLogoutGetAPI() async -> Bool {
-        var logoutOperation : Bool = false
-        
-        guard let url =  URL(string: "http://"+$aemParams.aemIp.wrappedValue+":"+$aemParams.aemPort.wrappedValue+"/system/sling/logout.html")
-        else{
-            return logoutOperation
-        }
-        
-        do{
-            let ( _, response) = try await URLSession.shared.data(from: url)
-            if let httpResponse = response as? HTTPURLResponse {
-                if (401...403).contains(httpResponse.statusCode){
-                    logoutOperation = true
-                }
-            }
-        }catch let parsingError {
-            print("Error", parsingError)
-        }
-        return logoutOperation
+        aemLogin.callLogoutGetAPI(urlString: aemParams.returnLogoutUrl())
     }
     
     init(/* aemData: Binding<AemInputData> */){

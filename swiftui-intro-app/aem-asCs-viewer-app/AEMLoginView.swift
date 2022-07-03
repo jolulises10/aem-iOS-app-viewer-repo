@@ -77,7 +77,7 @@ struct AEMLoginView: View {
     }
     
     private func performLogin() {
-        aemLogin.callAuthPostAPI(aemParams: aemParams)
+        aemLogin.callAuthPostAPI(urlString: aemParams.returnLoginUrl())
     }
 }
 
