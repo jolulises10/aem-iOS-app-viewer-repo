@@ -8,10 +8,11 @@
 import SwiftUI
 
 @main
-struct swiftui_intro_appApp: App {
+struct AEMasCsAuhtorViewerApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AEMLoginView()
         }
     }
 }

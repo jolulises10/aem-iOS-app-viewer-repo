@@ -7,6 +7,7 @@
 
 import Foundation
 
+//this struct was for testing purposes with an external mock api. Leaving there for the moment
 struct MockResponse: Codable {
     let message: String
     let errorMessage: String
