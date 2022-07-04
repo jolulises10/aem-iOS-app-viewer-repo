@@ -12,12 +12,6 @@ class AemLogin : ObservableObject {
     @Published var aemPassword: String = ""
     @Published var isLoggedin: Bool = false
     
-    //private let urlSession: URLSession
-    
-    /*init(urlSession: URLSession = URLSession.shared){
-        self.urlSession = urlSession
-    }*/
-    
     func callAuthPostAPI(urlString: String) {
         
         Task {
@@ -46,6 +40,10 @@ class AemLogin : ObservableObject {
                     if (200...299).contains(httpResponse.statusCode) && data.count > 0 {
                         DispatchQueue.main.async {
                             self.isLoggedin = true
+                        }
+                    }else{
+                        DispatchQueue.main.async {
+                            self.isLoggedin = false
                         }
                     }
                 }
@@ -98,4 +96,36 @@ class AemInputData : ObservableObject {
     func returnLogoutUrl() -> String {
         return "http://"+aemIp+":"+aemPort+"/system/sling/logout.html"
     }
+    
+    func returnBusinessUrl() -> String {
+        return "http://"+aemIp+":"+aemPort+"/bin/helloWorldComponentServlet"
+    }
+}
+
+// this class doesn't implement the ObservableObject protocol class as no other view requires the object so far. Therefore,
+// this implementation is async await approach
+class AemBusinessData {
+    
+    private var objResponse: AEMPageResponse?
+    
+    func callAPI(aemPathToSearch: String, aemUrl: String) async -> AEMPageResponse {
+        
+        objResponse = AEMPageResponse()
+            
+        var components = URLComponents(string: aemUrl)
+        let queryItemPath = URLQueryItem(name: "aemPath", value: aemPathToSearch)
+
+        components?.queryItems = [queryItemPath]
+    
+        do{
+            let (data, _) = try await URLSession.shared.data(from: (components?.url)!)
+            let decoder = JSONDecoder()
+            objResponse = try decoder.decode(AEMPageResponse.self, from: data)
+        }catch let parsingError {
+            print("Error calling business AEM method:", parsingError)
+        }
+        
+        return objResponse!
+    }
+    
 }

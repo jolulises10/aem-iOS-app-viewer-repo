@@ -13,8 +13,10 @@ struct AEMContentView: View {
     @State private var apiMessage : String
     @Binding private var aemPath : String
     
+    private var aemBusinessClass = AemBusinessData()
+    
     @EnvironmentObject var aemParams : AemInputData
-    //@ObservedObject var aemParams : AemInputData
+    
     
     var body: some View {
         VStack(spacing: 10) {
@@ -38,11 +40,15 @@ struct AEMContentView: View {
             }.padding()
         }
         .task {
-            let myModel = await callAPI(aemPathToSearch: aemPath, aemIP: $aemParams.aemIp, aemPort: $aemParams.aemPort)
+            let myModel = await getAemModel(aemPathToSearch: aemPath)
             apiTitle = "Title: "+myModel.title
             apiText = " Text: "+myModel.text
             apiMessage = " Message: "+myModel.message
         }
+    }
+    
+    func getAemModel(aemPathToSearch: String) async -> AEMPageResponse {
+        return await aemBusinessClass.callAPI(aemPathToSearch: aemPathToSearch, aemUrl: aemParams.returnBusinessUrl())
     }
     
     init(aemPathParam: Binding<String>/*, aemIpParam: Binding<String>*/){
@@ -62,26 +68,4 @@ struct AEMContentView_Previews: PreviewProvider {
     static var previews: some View {
         AEMContentView(aemPathParam: .constant(aemPathPreview)/*, aemIpParam: .constant(aemIpPreview)*/)
     }
-}
-
-func callAPI(aemPathToSearch: String, aemIP: Binding<String>, aemPort: Binding<String>) async -> AEMPageResponse {
-    
-    var objResponse = AEMPageResponse()
-    
-    print("IP value: "+aemIP.wrappedValue)
-    print("Port value: "+aemPort.wrappedValue)
-    
-    var components = URLComponents(string: "http://"+aemIP.wrappedValue+":"+aemPort.wrappedValue+"/bin/helloWorldComponentServlet")
-    let queryItemPath = URLQueryItem(name: "aemPath", value: aemPathToSearch)
-
-    components?.queryItems = [queryItemPath]
-    
-    do{
-        let (data, _) = try await URLSession.shared.data(from: (components?.url)!)
-        let decoder = JSONDecoder()
-        objResponse = try decoder.decode(AEMPageResponse.self, from: data)
-    }catch let parsingError {
-        print("Error", parsingError)
-    }
-    return objResponse
 }

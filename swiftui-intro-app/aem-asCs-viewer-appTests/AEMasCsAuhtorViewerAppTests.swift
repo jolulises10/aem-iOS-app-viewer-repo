@@ -15,12 +15,12 @@ import Combine
     var loginViewModel: AemLogin!
     var stringURL: String?
     var url: URL?
-    //var httpResponse : HTTPURLResponse?
 
     @MainActor override func setUpWithError() throws {
         loginViewModel = AemLogin()
         stringURL = "http://localhost:4504/j_security_check"
         url = URL(string: stringURL!)
+        URLProtocol.registerClass(MockURLProtocol.self)
     }
 
     override func tearDownWithError() throws {
@@ -34,17 +34,10 @@ import Combine
         }
     }
     
-    func testHelloWorldWithNoNameReturnsHelloWorld() throws {
+    func testAemLoginSuccesful() throws {
         //given
-        // We assign expected data to that url in our protocol
-        URLProtocol.registerClass(MockURLProtocol.self)
-        MockURLProtocol.data = [url: Data("{\"id\":7728}".utf8)]
-        //httpResponse = HTTPURLResponse(url: url!, statusCode: 200, httpVersion: "", headerFields: nil)
+        MockURLProtocol.data = [url: Data("{\"user\":admin}".utf8)]
         MockURLProtocol.httpResponse = [url: HTTPURLResponse(url: url!, statusCode: 200, httpVersion: "", headerFields: nil)!]
-        //let configuration = URLSessionConfiguration.ephemeral
-        //configuration.protocolClasses = [MockURLProtocol.self]
-        //let session = URLSession(configuration: configuration)
-        //loginViewModel = AemLogin(urlSession: session)
         
         //when
         loginViewModel.callAuthPostAPI(urlString: stringURL!)
@@ -52,6 +45,19 @@ import Combine
         
         //then
         XCTAssertTrue(loginViewModel.isLoggedin)
+    }
+    
+    func testAemLoginFailed() throws {
+        //given
+        MockURLProtocol.data = [url: Data("".utf8)]
+        MockURLProtocol.httpResponse = [url: HTTPURLResponse(url: url!, statusCode: 401, httpVersion: "", headerFields: nil)!]
+        
+        //when
+        loginViewModel.callAuthPostAPI(urlString: stringURL!)
+        waitUntil(loginViewModel.$isLoggedin, equals: false)
+        
+        //then
+        XCTAssertFalse(loginViewModel.isLoggedin)
     }
     
     func waitUntil<T: Equatable>(_ propertyPublisher: Published<T>.Publisher,

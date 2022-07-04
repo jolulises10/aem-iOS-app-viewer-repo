@@ -11,7 +11,6 @@ class MockURLProtocol: URLProtocol {
     
     static var data = [URL?: Data]()
     static var httpResponse = [URL?: HTTPURLResponse]()
-    //static var simulatedDelay = 50
 
     override class func canInit(with request: URLRequest) -> Bool {
       true
@@ -31,11 +30,6 @@ class MockURLProtocol: URLProtocol {
         }
       }
       client?.urlProtocolDidFinishLoading(self)
-      /*DispatchQueue
-        .global()
-        .asyncAfter(deadline: .now() + .seconds(Self.simulatedDelay)) { [unowned self] in
-            client?.urlProtocolDidFinishLoading(self)
-          }*/
     }
 
     override func stopLoading() {}
